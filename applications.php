@@ -2,49 +2,16 @@
 <head>
 <title>Registration form </title>
 <script src="js/jquery-3.0.1.js"></script>
-<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/angular.js"></script>
 <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
 <script type="text/javascript">
 var app= angular.module("myapp",[]);
 app.controller("myCtrl",function($scope){
 	$("#submit").click(function(){
-		var fname=$("#fname").val();
-    var lname=$("#lname").val();
-    var email=$("#email").val();
-    var password=$("#password").val();
-    var mobile=$("#mobile").val();
-    var address=$("#address").val();
-    var gender=$("#gender").val();
-    var nationality=$("#nationality").val();
-    var InputFile=$("#InputFile").val();
-    var dataString = $("myform").serialize();
-    if(fname==''|| lname==''|| email==''|| password==''|| gender==''|| nationality=='' || InputFile=''){
-      $("#msg").php("fill all details");
-    }
-    else
-    {
-      $.ajax({
-        type:'POST',
-        url: 'http://localhost/sample-project/index.php';
-        data: dataString;
-        cache: false,
-        success: function(response){
-          $("msg").html(response);
-              var fname=$("#fname").val("");
-              var lname=$("#lname").val("");
-              var email=$("#email").val("");
-              var password=$("#password").val("");
-              var mobile=$("#mobile").val("");
-              var address=$("#address").val("");
-              var gender=$("#gender").val("");
-              var nationality=$("#nationality").val("");
-              var InputFile=$("#InputFile").val("");
-        }
-      }); 
-    } 
-    return false;
+	alert(" i am here");
 	});
 });
+
 </script>
 </head>
 <body style="background-color:bdc3c7" ng-controller="myCtrl">
@@ -108,16 +75,9 @@ app.controller("myCtrl",function($scope){
         <option>Afrika</option>
       </select>
     </div>
-    <div class="form-group">
-      <label for="exampleInputFile">Input file</label>
-      <input type="file" name="InputFile" class="form-control-file" id="InputFile"/>
-    </div>
-   
-    <span id="msg"></span>
 
-
-    <button type="submit" id="submit" name="submit"class="btn btn-primary">Submit</button>
-     </div>
+     
+    <button type="submit" id="submit" name="submit"  class="btn btn-primary">Submit </button>
   </fieldset>
 </form>
 </div>
